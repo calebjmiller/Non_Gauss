@@ -31,8 +31,6 @@ function [Npix, grid_points, A_1, A_2] = get_A_full(B, j_min, j_max, theta, phi,
     [~,~,A_theta] = get_A_part_ss('theta', B, j_min, j_max, theta, phi);  
 % Construct A_1 
 
-%%%%%%%%%%%%% THETA INPUT NEEDS TO BE ADDRESSED %%%%%%%%%%%%%%%%%%
-
     A_1 = k_theta.*sin(theta)./sin(theta/4).*A_phi-4*k_phi.*A_theta;
 
 %%% Constructing psi_jk^(2) -> A_2
