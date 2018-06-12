@@ -1,4 +1,4 @@
-function [post_samples] = real_sim_AM_sigma_rep(R, seed, eta, sigma_j, tau)
+function [post_samples, Y, DA] = real_sim_AM_sigma_rep(R, seed, eta, sigma_j, tau)
 % simulation study
 % generate non-stationary std function using random seed eta_seed
 
@@ -56,6 +56,8 @@ for rep = 1:R
     %g'
     load('deriv_B_spline_test_v2.mat')
     b_mat_deriv = bS;
+    % first column of b_mat_deriv to zeros consistent with the ones in b_mat
+    b_mat_deriv(:,1)=0;
     std_vec_deriv = b_mat_deriv*eta.*std_vec;
     % form some fakish data notice for loop and mult rather than diagonal
     % matrix multiplication to save time
