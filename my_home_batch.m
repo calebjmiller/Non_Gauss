@@ -36,7 +36,7 @@ eta
 % parfor seed = 1:n_seed
 %     maxNumCompThreads(4);
 %     %calling sim_AM_sigma_rep
-    [post_samples] = real_sim_AM_sigma_rep(R, eta_seed, eta, sigma_j, tau);
+    [post_samples, Y, DA] = real_sim_AM_sigma_rep(R, eta_seed, eta, sigma_j, tau);
 %     %storing in the cell
     %eta_est_cell{seed} = eta_est;
     %sigma_j_est_cell{seed} = sigma_j_est;
@@ -49,7 +49,7 @@ eta
 %tau_est_all = cell2mat(tau_est_cell);
 
 %%%saving the reults
-filename = ['real_sim_rep_par', num2str(eta_seed), '.mat'];
+filename = ['ng_1_', num2str(eta_seed), '.mat'];
 save(filename)
 
 %print it
