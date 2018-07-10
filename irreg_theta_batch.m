@@ -49,7 +49,7 @@ eta
 %tau_est_all = cell2mat(tau_est_cell);
 
 %%%saving the reults
-filename = ['ng_irreg_theta_1_', num2str(eta_seed), '.mat'];
+filename = ['ng_irreg_theta_inner_1_', num2str(eta_seed), '.mat'];
 save(filename)
 
 %print it
