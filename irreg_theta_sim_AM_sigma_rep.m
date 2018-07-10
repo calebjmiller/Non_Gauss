@@ -41,14 +41,14 @@ for rep = 1:R
     %%%% lets remove a sector
    
   
-    ind = theta>3*pi/4 | theta<pi/2;
+    ind = theta>pi/2;
     phi = phi(ind);
     theta=theta(ind);
     
     %max(theta)
     %min(theta)
     %mean(theta)
-    %save('irreg_mid_theta.mat','theta')
+    %save('irreg_theta_inner.mat','theta')
     %pause
     % load theta phi k_theta k_phi
   
@@ -64,7 +64,7 @@ for rep = 1:R
     % g
     std_vec = exp(b_mat*eta);
     %g'
-    load('irreg_theta_mid_deriv_B_spline.mat')
+    load('irreg_theta_inner_deriv_B_spline.mat')
     b_mat_deriv = bS;
     % first column of b_mat_deriv to zeros consistent with the ones in b_mat
     b_mat_deriv(:,1)=0;
