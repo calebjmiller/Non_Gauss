@@ -21,7 +21,7 @@ knots = [0 0 0 0 0.5 1 1 1 1]*pi;
 r = 4;
 
 
-[post_samples,Y , theta, phi, Npix] = sd_thin_sim(R, eta_seed);
+[post_samples, Y, theta, phi, k_theta, k_phi, Npix, thin] = sd_thin_sim(R, eta_seed);
 
 %%%saving the reults
 filename = ['sd_thin_test_1_', num2str(eta_seed), '.mat'];
