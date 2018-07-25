@@ -1,4 +1,4 @@
-function [post_samples, Y, theta, phi, k_theta, k_phi, Npix, thin] = sd_thin_sim(R, seed)
+function [post_samples, Y, theta, phi, k_theta, k_phi, Npix] = sd_thin_sim(R, seed)
 % simulation study
 % generate non-stationary std function using random seed eta_seed
 
@@ -47,7 +47,7 @@ for rep = 1:R
     Y = Vlos_res';
     
     % thin them out
-    thin = 14;
+    thin = 7;
     theta = theta(1:thin:end);
     phi = phi(1:thin:end);
     k_theta = k_theta(1:thin:end);
@@ -55,7 +55,7 @@ for rep = 1:R
     Y = Y(1:thin:end);
     
     % for R code
-    % save('sd_theta_thin_14.mat','theta');
+    % save('sd_theta_thin_7.mat','theta');
     % pause
     
     % design matrix A
@@ -68,7 +68,7 @@ for rep = 1:R
     % g
     %std_vec = exp(b_mat*eta);
     %g' (this mat file comes from R code)
-    load('sd_thin_14_deriv_B_spline.mat')
+    load('sd_thin_7_deriv_B_spline.mat')
     b_mat_deriv = bS;
     % first column of b_mat_deriv to zeros consistent with the ones in b_mat
     b_mat_deriv(:,1)=0;
@@ -137,9 +137,6 @@ for rep = 1:R
 
     post_samples = real_Gibbs_sampler_AM_reparam(model, data, params, tuning, options);
     
-    %eta_est(:, rep) = mean(post_samples.eta, 2);
-    %sigma_j_est(:, rep) = mean(sqrt(post_samples.sigma_j_sq), 2);
-    %tau_est(rep) = mean(1./sqrt(post_samples.tau_sq_inv));
     
 end
 
