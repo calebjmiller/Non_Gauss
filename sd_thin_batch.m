@@ -24,7 +24,7 @@ r = 4;
 [post_samples, Y, theta, phi, k_theta, k_phi, Npix] = sd_thin_sim(R, eta_seed);
 
 %%%saving the reults
-filename = ['sd_thin_7_', num2str(eta_seed), '.mat'];
+filename = ['br_sd_thin_7_', num2str(eta_seed), '.mat'];
 save(filename)
 
 
