@@ -169,7 +169,7 @@ for t = 1:T
     
     % sample eta 
     %(new loop start)
-    for ijk = 1:100
+    for ijk = 1:25
         eta_star = [0; mvnrnd(eta(2:end), lambda*Sigma)'];
         f1 = tau_sq_inv*quad_form/2+eta(2:r+1)'*eta(2:r+1)/2/tau_eta_sq;
         std_vec = exp(b_mat*eta_star);
