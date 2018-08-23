@@ -24,7 +24,7 @@ r = 4;
 [post_samples, Y, theta, phi, k_theta, k_phi, Npix] = sd_tweak_sim(R, eta_seed);
 
 %%%saving the reults
-filename = ['tweak_sd_thin_7_', num2str(eta_seed), '.mat'];
+filename = ['tweak_25_sd_thin_14_', num2str(eta_seed), '.mat'];
 save(filename)
 
 
