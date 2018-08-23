@@ -47,7 +47,7 @@ for rep = 1:R
     Y = Vlos_res';
     
     % thin them out
-    thin = 7;
+    thin = 14;
     theta = theta(1:thin:end);
     phi = phi(1:thin:end);
     k_theta = k_theta(1:thin:end);
@@ -99,7 +99,7 @@ for rep = 1:R
     % g
     %std_vec = exp(b_mat*eta);
     %g' (this mat file comes from R code)
-    load('sd_thin_7_deriv_B_spline.mat')
+    load('sd_thin_14_deriv_B_spline.mat')
     b_mat_deriv = bS;
     % first column of b_mat_deriv to zeros consistent with the ones in b_mat
     b_mat_deriv(:,1)=0;
